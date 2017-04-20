@@ -5,7 +5,7 @@
          anchors.fill: parent
          opacity: 0
 -        onItemChanged: opacity = 1
-+        onItemChanged: opacity = 0.8
++        onItemChanged: opacity = 0.95
  
          focus: true
  
@@ -41,7 +41,7 @@
 +        width: 400
 +        height: parent.height
 +        color: PlasmaCore.ColorScope.backgroundColor
-+        opacity: 0.8
++        opacity: 0.95
 +    }
 +
      Clock {
