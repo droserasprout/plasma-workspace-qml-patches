@@ -1,0 +1,22 @@
+--- /usr/share/sddm/themes/breeze/KeyboardButton.qml
++++ /usr/share/sddm/themes/breeze/KeyboardButton.qml
+@@ -10,7 +10,7 @@ PlasmaComponents.ToolButton {
+ 
+     property int currentIndex: -1
+ 
+-    text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Keyboard Layout: %1", instantiator.objectAt(currentIndex).shortName)
++    text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "%1", instantiator.objectAt(currentIndex).shortName)
+     implicitWidth: minimumWidth
+ 
+     visible: menu.items.length > 1
+--- /usr/share/sddm/themes/breeze/SessionButton.qml
++++ /usr/share/sddm/themes/breeze/SessionButton.qml
+@@ -32,7 +32,7 @@ PlasmaComponents.ToolButton {
+ 
+     visible: menu.items.length > 1
+ 
+-    text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Desktop Session: %1", instantiator.objectAt(currentIndex).text || "")
++    text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "%1", instantiator.objectAt(currentIndex).text || "")
+ 
+     Component.onCompleted: {
+         currentIndex = sessionModel.lastIndex

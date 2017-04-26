@@ -6,7 +6,7 @@ Use provided .sh scripts to apply/reverse these patches. Tested on ArchLinux wit
 
 ## Screenshots
 ### SDDM
-![SDDM theme](https://i.imgur.com/VGGcmOS.png)
+![SDDM theme](https://i.imgur.com/FPRzDXY.png)
 ### kscreenlocker
 ![kscreenlocker theme](https://i.imgur.com/iaFWDNU.png)
 ### org.kde.plasma.private.systemtray 
