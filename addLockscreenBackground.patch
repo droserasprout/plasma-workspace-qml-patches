@@ -28,33 +28,3 @@
 +        color: PlasmaCore.ColorScope.backgroundColor
  
          Component.onCompleted: PropertyAnimation { id: launchAnimation; target: lockScreenRoot; property: "opacity"; from: 0; to: 1; duration: 1000 }
- 
---- /usr/share/sddm/themes/breeze/Main.qml
-+++ /usr/share/sddm/themes/breeze/Main.qml
-@@ -57,6 +57,15 @@ PlasmaCore.ColorScope {
-         }
-     }
-
-+    Rectangle {
-+        id: container
-+        anchors.centerIn: parent
-+        width: 400
-+        height: parent.height
-+        color: PlasmaCore.ColorScope.backgroundColor
-+        opacity: 0.95
-+    }
-+
-     Clock {
-         visible: y > 0
-         anchors.bottom: parent.verticalCenter
-@@ -187,8 +196,8 @@ PlasmaCore.ColorScope {
-         id: footer
-         anchors {
-             bottom: parent.bottom
--            left: parent.left
--            right: parent.right
-+            left: container.left
-+            right: container.right
-             margins: units.smallSpacing
-         }
-

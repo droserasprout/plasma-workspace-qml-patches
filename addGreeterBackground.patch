@@ -1,0 +1,59 @@
+--- /usr/share/sddm/themes/breeze/Main.qml
++++ /usr/share/sddm/themes/breeze/Main.qml
+@@ -21,6 +21,7 @@ import QtQuick 2.2
+ 
+ import QtQuick.Layouts 1.1
+ import QtQuick.Controls 1.1
++import QtGraphicalEffects 1.0
+ 
+ import org.kde.plasma.core 2.0 as PlasmaCore
+ import org.kde.plasma.components 2.0 as PlasmaComponents
+@@ -57,6 +58,38 @@ PlasmaCore.ColorScope {
+         }
+     }
+ 
++    Image {
++        id: container
++	clip: true
++	fillMode: Image.PreserveAspectCrop
++        anchors.centerIn: parent
++        width: 400
++        height: parent.height
++	source: config.background
++    }
++
++    DropShadow {
++        anchors.fill: container
++        radius: 12
++        samples: 16
++        color: "#161616"
++        source: container
++    }
++
++    FastBlur {
++        source: container
++	anchors.fill: container
++        radius: 48
++   }
++
++
++   Rectangle {
++	anchors.fill: container
++        color: PlasmaCore.ColorScope.backgroundColor
++	opacity: 0.75
++    }
++
++    
+     Clock {
+         visible: y > 0
+         anchors.bottom: parent.verticalCenter
+@@ -187,8 +220,8 @@ PlasmaCore.ColorScope {
+         id: footer
+         anchors {
+             bottom: parent.bottom
+-            left: parent.left
+-            right: parent.right
++            left: container.left
++            right: container.right
+             margins: units.smallSpacing
+         }
