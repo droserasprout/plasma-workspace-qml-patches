@@ -1,0 +1,15 @@
+--- /usr/share/plasma/plasmoids/org.kde.plasma.notifications/contents/ui/JobDetailsItem.qml
++++ /usr/share/plasma/plasmoids/org.kde.plasma.notifications/contents/ui/JobDetailsItem.qml
+@@ -101,7 +101,11 @@ Column {
+                 height: paintedHeight
+ 
+                 font: theme.smallestFont
+-                text: jobItem["label" + index] || ""
++                text: {
++                    var labelSplit = jobItem["label" + index].split("/")
++                    labelSplit[labelSplit.length - 1] = ""
++                    return labelSplit.join("/")
++                }
+                 textFormat: Text.PlainText
+                 elide: Text.ElideMiddle
+

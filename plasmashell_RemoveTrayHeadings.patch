@@ -1,0 +1,55 @@
+--- /usr/share/plasma/plasmoids/org.kde.plasma.private.systemtray/contents/ui/ExpandedRepresentation.qml
++++ /usr/share/plasma/plasmoids/org.kde.plasma.private.systemtray/contents/ui/ExpandedRepresentation.qml
+@@ -71,7 +71,7 @@ Item {
+         }
+ 
+         visible: activeApplet
+-        text: activeApplet.title || ""
++        text: ""
+         MouseArea {
+             anchors.fill: parent
+             onClicked: {
+@@ -82,19 +82,6 @@ Item {
+             }
+         }
+     }
+-    PlasmaExtras.Heading {
+-        id: noAppletHeading
+-        level: 1
+-        anchors {
+-            left: parent.left
+-            top: parent.top
+-            right: parent.right
+-            topMargin: hiddenItemsView.visible ? units.smallSpacing : 0
+-            leftMargin: hiddenItemsView.iconColumnWidth + units.largeSpacing;
+-        }
+-        text: i18n("Status & Notifications")
+-        visible: !heading.visible
+-    }
+ 
+     PlasmaCore.SvgItem {
+         anchors {
+@@ -120,7 +107,7 @@ Item {
+         id: hiddenItemsView
+         anchors {
+             left: parent.left
+-            top: noAppletHeading.bottom
++            top: parent.top
+             topMargin: units.smallSpacing
+             bottom: parent.bottom
+         }
+@@ -128,12 +115,7 @@ Item {
+ 
+     PlasmoidPopupsContainer {
+         id: container
+-        anchors {
+-            left: parent.left
+-            right: parent.right
+-            top: heading.bottom
+-            bottom: parent.bottom
+-            leftMargin: hiddenItemsView.visible ? hiddenItemsView.iconColumnWidth + units.largeSpacing : 0
+-        }
++        anchors.fill: parent
++        anchors.leftMargin: hiddenItemsView.visible ? hiddenItemsView.iconColumnWidth + units.largeSpacing : 0
+     }
+ }
